@@ -34,12 +34,13 @@ public class Alumno {
     public  void agregarAlumno(String nombres, String apellidos,int identificacion,
             String fechaNacimiento,String telefono, String correo, String direccion, int becado){
        
-         AlumnoDto nuevoAlumno = new AlumnoDto(becado, nombres, apellidos,
+            AlumnoDto nuevoAlumno = new AlumnoDto(becado, nombres, apellidos,
                  identificacion, fechaNacimiento, telefono, correo, direccion);
 
-         alumno.add(nuevoAlumno);
-         
-         System.out.println("Alumnos guadados: "+alumno);
+            alumno.add(nuevoAlumno);
+            
+            System.out.println(alumno);
+            
     }
     
     public  void modificarAlumno(){
