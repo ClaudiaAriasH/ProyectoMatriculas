@@ -20,7 +20,7 @@ public class Alumno {
         this.alumno = new ArrayList<>();
     }
     
-    public  void insertarAlumno(String nombres, String apellidos,int identificacion,
+    public  void agregarAlumno(String nombres, String apellidos,int identificacion,
             String fechaNacimiento,String telefono, String correo, String direccion, int becado){
        
          AlumnoDto nuevoAlumno = new AlumnoDto(apellidos, nombres, apellidos,
