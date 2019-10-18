@@ -11,15 +11,16 @@ package proyectomatriculas;
  */
 public class AlumnoDto extends DatosPersonales{
  
-    private boolean becado;
+    private int becado;
 
-    public boolean isBecado() {
+    public int getBecado() {
         return becado;
     }
 
-    public void setBecado(boolean becado) {
+    public void setBecado(int becado) {
         this.becado = becado;
     }
+    
 
     @Override
     public String toString() {
