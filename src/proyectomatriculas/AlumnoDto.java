@@ -7,7 +7,7 @@ package proyectomatriculas;
 
 /**
  *
- * @author hmunoze
+ * @author Henry
  */
 public class AlumnoDto extends DatosPersonales{
  
