@@ -11,28 +11,30 @@ package proyectomatriculas;
  */
 public class AsignaturasDto {
     
-    private int codigo;
+    private String codigo;
     private String nombre;
-    private int intensidadHoraria;
-    private int creditos;
+    private String intensidadHoraria;
+    private String creditos;
+
+
 
     public AsignaturasDto()
     {
     
     }
 
-    public AsignaturasDto(int codigo, String nombre, int intensidadHoraria, int creditos) {
+    public AsignaturasDto(String codigo, String nombre, String intensidadHoraria, String creditos) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.intensidadHoraria = intensidadHoraria;
         this.creditos = creditos;
     }
 
-    public int getCodigo() {
+    public String getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(int codigo) {
+    public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
 
@@ -44,25 +46,26 @@ public class AsignaturasDto {
         this.nombre = nombre;
     }
 
-    public int getIntensidadHoraria() {
+    public String getIntensidadHoraria() {
         return intensidadHoraria;
     }
 
-    public void setIntensidadHoraria(int intensidadHoraria) {
+    public void setIntensidadHoraria(String intensidadHoraria) {
         this.intensidadHoraria = intensidadHoraria;
     }
 
-    public int getCreditos() {
+    public String getCreditos() {
         return creditos;
     }
 
-    public void setCreditos(int creditos) {
+    public void setCreditos(String creditos) {
         this.creditos = creditos;
     }
     
-    
+
     @Override
     public String toString() {
-        return "Asignaturas{" + "codigo=" + codigo + ", nombre=" + nombre + ", intensidadHoraria=" + intensidadHoraria + ", creditos=" + creditos + '}';
+        return "AsignaturasDto{" + "codigo=" + codigo + ", nombre=" + nombre + ", intensidadHoraria=" + intensidadHoraria + ", creditos=" + creditos + '}';
     }
-}
+ 
+   }

@@ -20,6 +20,9 @@ public class ProyectoMatriculas {
 
         int opcionPrincipal;
         boolean salir = false;
+        
+        Asignaturas asignatura = new Asignaturas();
+        AsignaturasDto asignaturaDto;
 
         while (!salir) {
 
@@ -87,6 +90,18 @@ public class ProyectoMatriculas {
                         while (opcionAsignaturas != 5) {
                             if (opcionAsignaturas == 1) {
                                 System.out.println("Opción insertar asignatura.");
+
+                                System.out.println("Ingrese el código");
+                                String codigo = scanner.next();
+                                System.out.println("Ingrese el nombre");
+                                String nombre = scanner.next();
+                                System.out.println("Ingrese la intensidad horaria");
+                                String intensidadH = scanner.next();
+                                System.out.println("Ingrese los créditos");
+                                String creditos = scanner.next();
+                                asignaturaDto = new AsignaturasDto(codigo, nombre, intensidadH, creditos);
+                                asignatura.agregarAsignatura(asignaturaDto);
+
                             } else if (opcionAsignaturas == 2) {
                                 System.out.println("Opción modificar asignatura.");
                             } else if (opcionAsignaturas == 3) {
