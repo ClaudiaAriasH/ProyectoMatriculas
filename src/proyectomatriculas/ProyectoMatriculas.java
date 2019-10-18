@@ -63,6 +63,9 @@ public class ProyectoMatriculas {
                         while (opcionAlumnos != 5) {
                             if (opcionAlumnos == 1) {
                                 System.out.println("Opción insertar alumno.");
+                                System.out.println("Ingresar nombres: ");
+                                String nombres = scanner.next();
+                                
                             } else if (opcionAlumnos == 2) {
                                 System.out.println("Opción modificar alumno.");
                             } else if (opcionAlumnos == 3) {
