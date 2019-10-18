@@ -20,6 +20,7 @@ public class ProyectoMatriculas {
         Scanner scanner = new Scanner(System.in);
         System.out.println("************************* Matriculas ****************************************");
         Profesor profesor = new Profesor();
+        ProfesorDto profesorDto = new ProfesorDto();
         List<ProfesorDto> datosProfesor;
         int opcionPrincipal;
         boolean salir = false;
@@ -57,11 +58,12 @@ public class ProyectoMatriculas {
                                 String correo = scanner.next();
                                 System.out.println("Ingrese la dirección");
                                 String direccion = scanner.next();
-                                ProfesorDto profesorDto = new ProfesorDto();
+
                                 datosProfesor = new ArrayList<ProfesorDto>();
+                               
                                 profesorDto = new ProfesorDto(profesion, nombres, apellidos, identificacion, fechaNacimiento, telefono, correo, direccion);
 
-                                profesor.agregarProfesor(datosProfesor);
+                                profesor.agregarProfesor(profesorDto);
 
                             } else if (opcionProfesores == 2) {
                                 System.out.println("Opción modificar profesor");
@@ -99,7 +101,7 @@ public class ProyectoMatriculas {
                                 System.out.println("Opción insertar alumno.");
                                 System.out.println("Ingresar nombres: ");
                                 String nombres = scanner.next();
-                                
+
                             } else if (opcionAlumnos == 2) {
                                 System.out.println("Opción modificar alumno.");
                             } else if (opcionAlumnos == 3) {
