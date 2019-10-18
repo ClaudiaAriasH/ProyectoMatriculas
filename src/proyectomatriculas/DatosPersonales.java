@@ -31,6 +31,10 @@ public class DatosPersonales {
         this.direccion = direccion;
     }
 
+    public DatosPersonales() {
+
+    }
+
 //Getters and Setters
     public String getNombres() {
         return nombres;
