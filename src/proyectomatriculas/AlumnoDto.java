@@ -31,6 +31,6 @@ public class AlumnoDto extends DatosPersonales{
 
     @Override
     public String toString() {
-        return "becado=" + becado;
+        return "becado=" + becado+" "+ super.toString();
     }
 }
