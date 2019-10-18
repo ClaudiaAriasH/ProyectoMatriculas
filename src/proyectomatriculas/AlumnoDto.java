@@ -12,6 +12,13 @@ package proyectomatriculas;
 public class AlumnoDto extends DatosPersonales{
  
     private int becado;
+    
+    //Constructor
+    public AlumnoDto(String profesion, String nombres, String apellidos, int identificacion, String fechaNacimiento, String telefono, String correo, String direccion) {
+        super(nombres, apellidos, identificacion, fechaNacimiento, telefono, correo, direccion);
+        this.becado = becado;
+    }
+    
 
     public int getBecado() {
         return becado;
