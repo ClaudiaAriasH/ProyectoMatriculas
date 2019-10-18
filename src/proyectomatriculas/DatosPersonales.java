@@ -20,7 +20,12 @@ public class DatosPersonales {
     private String correo;
     private String direccion;
 
-    //Constructor
+    //Constructor vacio
+    public DatosPersonales() {
+
+    }
+
+    //Constructor con las variables
     public DatosPersonales(String nombres, String apellidos, int identificacion, String fechaNacimiento, String telefono, String correo, String direccion) {
         this.nombres = nombres;
         this.apellidos = apellidos;
@@ -31,11 +36,7 @@ public class DatosPersonales {
         this.direccion = direccion;
     }
 
-    public DatosPersonales() {
-
-    }
-
-//Getters and Setters
+    //Getters and Setters
     public String getNombres() {
         return nombres;
     }
