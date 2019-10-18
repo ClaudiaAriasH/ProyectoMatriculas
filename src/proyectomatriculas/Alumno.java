@@ -20,16 +20,26 @@ public class Alumno {
         this.alumno = new ArrayList<>();
     }
     
+    /**
+     * Procedimiento Agregar Alumno
+     * @param nombres
+     * @param apellidos
+     * @param identificacion
+     * @param fechaNacimiento
+     * @param telefono
+     * @param correo
+     * @param direccion
+     * @param becado 
+     */
     public  void agregarAlumno(String nombres, String apellidos,int identificacion,
             String fechaNacimiento,String telefono, String correo, String direccion, int becado){
        
-         AlumnoDto nuevoAlumno = new AlumnoDto(apellidos, nombres, apellidos,
+         AlumnoDto nuevoAlumno = new AlumnoDto(becado, nombres, apellidos,
                  identificacion, fechaNacimiento, telefono, correo, direccion);
-         
-         nuevoAlumno.setBecado(becado);
 
          alumno.add(nuevoAlumno);
-       
+         
+         System.out.println("Alumnos guadados: "+alumno);
     }
     
     public  void modificarAlumno(){
