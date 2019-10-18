@@ -15,6 +15,10 @@ public class ProfesorDto extends DatosPersonales {
     private String profesion;
 
     //Constructor
+    public ProfesorDto() {
+
+    }
+
     public ProfesorDto(String profesion, String nombres, String apellidos, int identificacion, String fechaNacimiento, String telefono, String correo, String direccion) {
         super(nombres, apellidos, identificacion, fechaNacimiento, telefono, correo, direccion);
         this.profesion = profesion;
