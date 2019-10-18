@@ -5,29 +5,19 @@
  */
 package proyectomatriculas;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author hmunoze
  */
-public class Alumno extends DatosPersonales {
+public class Alumno {
     
-    
-    private boolean becado;
+   ArrayList<AlumnoDto> alumno = new ArrayList<>();
 
-    public boolean isBecado() {
-        return becado;
+    public Alumno(){
+        
     }
-
-    public void setBecado(boolean becado) {
-        this.becado = becado;
-    }
-
-    @Override
-    public String toString() {
-        return "becado=" + becado;
-    }
-
-    
     
  
     
