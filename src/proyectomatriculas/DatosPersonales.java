@@ -19,8 +19,13 @@ public class DatosPersonales {
     private String telefono;
     private String correo;
     private String direccion;
+    
+    //Constructor vacio
+    public DatosPersonales() {
 
-    //Constructor
+    }
+
+    //Constructor con las variables
     public DatosPersonales(String nombres, String apellidos, int identificacion, String fechaNacimiento, String telefono, String correo, String direccion) {
         this.nombres = nombres;
         this.apellidos = apellidos;
