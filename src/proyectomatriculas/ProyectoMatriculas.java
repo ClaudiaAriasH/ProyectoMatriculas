@@ -5,7 +5,9 @@
  */
 package proyectomatriculas;
 
+import java.util.ArrayList;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -17,7 +19,8 @@ public class ProyectoMatriculas {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("************************* Matriculas ****************************************");
-
+        Profesor profesor = new Profesor();
+        List<ProfesorDto> datosProfesor;
         int opcionPrincipal;
         boolean salir = false;
 
@@ -38,12 +41,43 @@ public class ProyectoMatriculas {
                         while (opcionProfesores != 5) {
                             if (opcionProfesores == 1) {
                                 System.out.println("Opción insertar profesor");
+                                System.out.println("Ingrese la profesión");
+                                String profesion = scanner.next();
+                                System.out.println("Ingrese los nombres");
+                                String nombres = scanner.next();
+                                System.out.println("Ingrese los apellidos");
+                                String apellidos = scanner.next();
+                                System.out.println("Ingrese la identificación");
+                                int identificacion = scanner.nextInt();
+                                System.out.println("Ingrese la fecha nacimiento");
+                                String fechaNacimiento = scanner.next();
+                                System.out.println("Ingrese el telefono");
+                                String telefono = scanner.next();
+                                System.out.println("Ingrese el correo");
+                                String correo = scanner.next();
+                                System.out.println("Ingrese la dirección");
+                                String direccion = scanner.next();
+                                ProfesorDto profesorDto = new ProfesorDto();
+                                datosProfesor = new ArrayList<ProfesorDto>();
+                                profesorDto = new ProfesorDto(profesion, nombres, apellidos, identificacion, fechaNacimiento, telefono, correo, direccion);
+
+                                profesor.agregarProfesor(datosProfesor);
+
                             } else if (opcionProfesores == 2) {
                                 System.out.println("Opción modificar profesor");
                             } else if (opcionProfesores == 3) {
                                 System.out.println("Opción eliminar profesor");
                             } else if (opcionProfesores == 4) {
                                 System.out.println("Opción consultar profesor");
+
+                                System.out.println("Ingrese la identificación");
+                                int iden = scanner.nextInt();
+
+                                if (profesor.buscarContacto(iden)) {
+                                    System.out.println("El profesor existe ");
+                                } else {
+                                    System.out.println("No se encontró el registro profesor");
+                                }
                             } else {
                                 System.out.println("Opción incorrecta, ingrese una opción valida.");
                             }
