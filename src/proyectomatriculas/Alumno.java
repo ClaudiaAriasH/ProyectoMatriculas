@@ -15,11 +15,25 @@ public class Alumno {
     
    ArrayList<AlumnoDto> alumno = new ArrayList<>();
 
-    //constructor
+    
     public Alumno(){
         
     }
     
- 
+    public  void insertarAlumno(){
+
+    }
+    
+    public  void modificarAlumno(){
+
+    }
+    
+    public  void eliminarAlumno(){
+
+    }
+    
+    public  void consultarAlumno(){
+
+    }    
     
 }
