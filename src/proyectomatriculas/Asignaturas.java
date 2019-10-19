@@ -22,7 +22,7 @@ public class Asignaturas {
     
     public void agregarAsignatura(AsignaturasDto a)
     {
-        //Continuar acá
-        System.out.println("Agregar asignatura" +a);
+       asignaturas.add(a);
     }
+    
 }

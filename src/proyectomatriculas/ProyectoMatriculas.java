@@ -27,6 +27,8 @@ public class ProyectoMatriculas {
 
         Asignaturas asignatura = new Asignaturas();
         AsignaturasDto asignaturaDto;
+        
+        Alumno alumno = new Alumno();
 
         while (!salir) {
 
@@ -100,15 +102,39 @@ public class ProyectoMatriculas {
                         while (opcionAlumnos != 5) {
                             if (opcionAlumnos == 1) {
                                 System.out.println("Opción insertar alumno.");
-                                System.out.println("Ingresar nombres: ");
+                            
+                                System.out.println("Ingrese los nombres: ");
                                 String nombres = scanner.next();
+
+                                System.out.println("Ingrese los apellidos: ");
+                                String apellidos = scanner.next();
+                                System.out.println("Ingrese la identificación: ");
+                                int identificacion = scanner.nextInt();
+                                System.out.println("Ingrese la fecha nacimiento Año/Mes/Día: ");
+                                String fechaNacimiento = scanner.next();
+                                System.out.println("Ingrese el telefono: ");
+                                String telefono = scanner.next();
+                                System.out.println("Ingrese el correo: ");
+                                String correo = scanner.next();
+                                System.out.println("Ingrese la dirección: ");
+                                String direccion = scanner.next();
+                                System.out.println("Ingrese si es becado: seleccione 1)SI, 2)No: ");
+                                int becado = scanner.nextInt();
+                                alumno.agregarAlumno(nombres, apellidos, identificacion, fechaNacimiento, telefono, correo, direccion, becado); 
+                                
 
                             } else if (opcionAlumnos == 2) {
                                 System.out.println("Opción modificar alumno.");
                             } else if (opcionAlumnos == 3) {
                                 System.out.println("Opción eliminar alumno.");
+                                System.out.println("Ingrese la identificación: ");
+                                int iden = scanner.nextInt();
+                                alumno.eliminarAlumno(iden);
                             } else if (opcionAlumnos == 4) {
                                 System.out.println("Opción consultar alumno.");
+                                System.out.println("Ingrese la identificación: ");
+                                int iden = scanner.nextInt();
+                                alumno.consultarAlumno(iden);
                             } else {
                                 System.out.println("Opción incorrecta, ingrese una opción valida.");
                             }

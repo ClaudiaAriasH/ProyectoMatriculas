@@ -36,14 +36,28 @@ public class Profesor {
     public boolean buscarContacto(int identificacion) {
 
         boolean existe = false;
-
+        int indice = 0;
         for (int i = 0; i < datosProfesor.size(); i++) {
-            if (datosProfesor.get(i).equals(identificacion)) {
-                return true;
+            if (datosProfesor.get(i).getIdentificacion() == identificacion) {
+                existe = true;
+                indice = i;
             }
-
         }
 
+        if (existe) {
+            System.out.println("************* Datos del Profesor ********** " + "\n");
+            System.out.println("Nombre: " + datosProfesor.get(indice).getNombres() + " " + datosProfesor.get(indice).getApellidos());
+
+            System.out.println("Identificación: " + datosProfesor.get(indice).getIdentificacion());
+            System.out.println("Fecha de Nacimiento: " + datosProfesor.get(indice).getFechaNacimiento());
+            System.out.println("Profesión: " + datosProfesor.get(indice).getProfesion());
+            System.out.println("Telefono: " + datosProfesor.get(indice).getTelefono());
+            System.out.println("Correo: " + datosProfesor.get(indice).getCorreo());
+            System.out.println("Dirección: " + datosProfesor.get(indice).getDireccion());
+
+        } else {
+            System.out.println("El profesor no existe en el sistema.");
+        }
         return existe;
     }
 

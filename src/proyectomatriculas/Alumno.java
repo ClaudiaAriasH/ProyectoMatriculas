@@ -34,24 +34,59 @@ public class Alumno {
     public  void agregarAlumno(String nombres, String apellidos,int identificacion,
             String fechaNacimiento,String telefono, String correo, String direccion, int becado){
        
-         AlumnoDto nuevoAlumno = new AlumnoDto(becado, nombres, apellidos,
+            AlumnoDto nuevoAlumno = new AlumnoDto(becado, nombres, apellidos,
                  identificacion, fechaNacimiento, telefono, correo, direccion);
 
-         alumno.add(nuevoAlumno);
-         
-         System.out.println("Alumnos guadados: "+alumno);
+            alumno.add(nuevoAlumno);
+            
+            System.out.println(alumno);
+            
     }
     
     public  void modificarAlumno(){
 
     }
     
-    public  void eliminarAlumno(){
-
+    /**
+     * Procedimiento para eliminar Alumno
+     * @param identificacion 
+     */
+    public  void eliminarAlumno(int identificacion){
+       
+            boolean encontrado = false;
+            for (int i = 0; i < alumno.size(); i++) {
+                    if (alumno.get(i).getIdentificacion()==identificacion) {
+                        alumno.remove(i);
+                        encontrado = true;
+                    }
+            }
+            if(encontrado){
+                System.out.println("El alumno con el número de identificación "+identificacion+" fue eliminado exitosamente.");
+            }else{
+                System.out.println("El alumno no existe en el sistema.");
+            }
     }
     
-    public  void consultarAlumno(){
-
+    /**
+     * Procedimiento para Consultar Alumno
+     * @param identificacion 
+     */
+    public  void consultarAlumno(int identificacion){
+        
+            boolean encontrado = false;
+            int indice=0;
+            for (int i = 0; i < alumno.size(); i++) {
+                    if (alumno.get(i).getIdentificacion()==identificacion) {
+                        encontrado = true;
+                        indice=i;
+                    }
+            }
+            
+            if(encontrado){
+                System.out.println("Datos del alumno: "+alumno.get(indice).getNombres()+" "+alumno.get(indice).getApellidos());
+            }else{
+                System.out.println("El alumno no existe en el sistema.");
+            }
     }    
     
 }

@@ -35,7 +35,8 @@ public class ProfesorDto extends DatosPersonales {
 
     @Override
     public String toString() {
-        return "Profesor{" + "profesion=" + profesion + '}';
+
+        return "Profesor=" + profesion + " " + super.toString();
     }
 
 }
