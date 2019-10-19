@@ -25,6 +25,9 @@ public class ProyectoMatriculas {
         int opcionPrincipal;
         boolean salir = false;
 
+        Asignaturas asignatura = new Asignaturas();
+        AsignaturasDto asignaturaDto;
+
         while (!salir) {
 
             try {
@@ -59,11 +62,9 @@ public class ProyectoMatriculas {
                                 System.out.println("Ingrese la dirección");
                                 String direccion = scanner.next();
 
-                                datosProfesor = new ArrayList<ProfesorDto>();
-                               
-                                profesorDto = new ProfesorDto(profesion, nombres, apellidos, identificacion, fechaNacimiento, telefono, correo, direccion);
-
-                                profesor.agregarProfesor(profesorDto);
+                               // datosProfesor = new ArrayList<ProfesorDto>();
+                               // profesorDto = new ProfesorDto(profesion, nombres, apellidos, identificacion, fechaNacimiento, telefono, correo, direccion);
+                                profesor.agregarProfesor(profesion, nombres, apellidos, identificacion, fechaNacimiento, telefono, correo, direccion);
 
                             } else if (opcionProfesores == 2) {
                                 System.out.println("Opción modificar profesor");
@@ -126,6 +127,18 @@ public class ProyectoMatriculas {
                         while (opcionAsignaturas != 5) {
                             if (opcionAsignaturas == 1) {
                                 System.out.println("Opción insertar asignatura.");
+
+                                System.out.println("Ingrese el código");
+                                String codigo = scanner.next();
+                                System.out.println("Ingrese el nombre");
+                                String nombre = scanner.next();
+                                System.out.println("Ingrese la intensidad horaria");
+                                String intensidadH = scanner.next();
+                                System.out.println("Ingrese los créditos");
+                                String creditos = scanner.next();
+                                asignaturaDto = new AsignaturasDto(codigo, nombre, intensidadH, creditos);
+                                asignatura.agregarAsignatura(asignaturaDto);
+
                             } else if (opcionAsignaturas == 2) {
                                 System.out.println("Opción modificar asignatura.");
                             } else if (opcionAsignaturas == 3) {

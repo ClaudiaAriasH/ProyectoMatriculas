@@ -9,19 +9,37 @@ import java.util.ArrayList;
 
 /**
  *
- * @author hmunoze
+ * @author Henry
  */
 public class Alumno {
     
-   ArrayList<AlumnoDto> alumno = new ArrayList<>();
+   ArrayList<AlumnoDto> alumno;
 
     
     public Alumno(){
-        
+        this.alumno = new ArrayList<>();
     }
     
-    public  void insertarAlumno(){
+    /**
+     * Procedimiento Agregar Alumno
+     * @param nombres
+     * @param apellidos
+     * @param identificacion
+     * @param fechaNacimiento
+     * @param telefono
+     * @param correo
+     * @param direccion
+     * @param becado 
+     */
+    public  void agregarAlumno(String nombres, String apellidos,int identificacion,
+            String fechaNacimiento,String telefono, String correo, String direccion, int becado){
+       
+         AlumnoDto nuevoAlumno = new AlumnoDto(becado, nombres, apellidos,
+                 identificacion, fechaNacimiento, telefono, correo, direccion);
 
+         alumno.add(nuevoAlumno);
+         
+         System.out.println("Alumnos guadados: "+alumno);
     }
     
     public  void modificarAlumno(){

@@ -23,25 +23,14 @@ public class Profesor {
     }
 
     public Profesor() {
+        this.datosProfesor = new ArrayList<>();
     }
 
-    public void agregarProfesor(ProfesorDto profesor) {
-        /*   for (int i = 0; i < profesor.size(); i++) {
-       
-         datosProfesor.add(profesor.get(i));
-         }
-         */
-        System.err.println("prueba Profesor: ");
-
-        for (int i = 0; i < datosProfesor.size(); i++) {
-
-            datosProfesor.add(profesor);
-
-        }
-
-        for (int i = 0; i < datosProfesor.size(); i++) {
-            System.err.println("Prueba" + datosProfesor.get(i));
-        }
+    public void agregarProfesor(String profesion, String nombres, String apellidos, int identificacion, String fechaNacimiento, String telefono, String correo, String direccion) {
+        ProfesorDto profesorDto = new ProfesorDto();
+        profesorDto = new ProfesorDto(profesion, nombres, apellidos, identificacion, fechaNacimiento, telefono, correo, direccion);
+        datosProfesor.add(profesorDto);
+        System.out.println("Alumnos guadados: " + datosProfesor);
     }
 
     public boolean buscarContacto(int identificacion) {
