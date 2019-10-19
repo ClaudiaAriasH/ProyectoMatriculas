@@ -26,14 +26,30 @@ public class Profesor {
         this.datosProfesor = new ArrayList<>();
     }
 
+    /**
+     *
+     * @param profesion
+     * @param nombres
+     * @param apellidos
+     * @param identificacion
+     * @param fechaNacimiento
+     * @param telefono
+     * @param correo
+     * @param direccion
+     */
     public void agregarProfesor(String profesion, String nombres, String apellidos, int identificacion, String fechaNacimiento, String telefono, String correo, String direccion) {
         ProfesorDto profesorDto = new ProfesorDto();
         profesorDto = new ProfesorDto(profesion, nombres, apellidos, identificacion, fechaNacimiento, telefono, correo, direccion);
         datosProfesor.add(profesorDto);
-        System.out.println("Alumnos guadados: " + datosProfesor);
+        System.out.println("Se guardo de forma exitosa.");
     }
 
-    public boolean buscarContacto(int identificacion) {
+    /**
+     *
+     * @param identificacion
+     * @return
+     */
+    public boolean buscarProfesor(int identificacion) {
 
         boolean existe = false;
         int indice = 0;
@@ -59,6 +75,30 @@ public class Profesor {
             System.out.println("El profesor no existe en el sistema.");
         }
         return existe;
+    }
+
+    /**
+     *
+     * @param identificacion
+     */
+    public void eliminarProfesor(int identificacion) {
+
+        boolean encontrado = false;
+        for (int i = 0; i < datosProfesor.size(); i++) {
+            if (datosProfesor.get(i).getIdentificacion() == identificacion) {
+                datosProfesor.remove(i);
+                encontrado = true;
+            }
+        }
+        if (encontrado) {
+            System.out.println("El profesor con el número de identificación " + identificacion + " fue eliminado exitosamente.");
+        } else {
+            System.out.println("El profesor no existe en el sistema.");
+        }
+    }
+
+    public void modificarProfesor() {
+
     }
 
 }
