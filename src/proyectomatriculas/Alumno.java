@@ -43,12 +43,27 @@ public class Alumno {
 
     }
 
-    public void modificarAlumno(String telefono, String correo, String direccion, int becado, int existe) {
+    public void modificarAlumno(String valor, int existe, int opcionseleccionada) {
 
-        alumno.get(existe).setTelefono(telefono);
-        alumno.get(existe).setCorreo(correo);
-        alumno.get(existe).setDireccion(direccion);
-        alumno.get(existe).setBecado(becado);
+        switch (opcionseleccionada) {
+
+            case 1:
+                alumno.get(existe).setTelefono(valor);
+                break;
+            case 2:
+                alumno.get(existe).setCorreo(valor);
+                break;
+            case 3:
+                alumno.get(existe).setDireccion(valor);
+                break;
+            case 4:
+                int becado = Integer.parseInt(valor);
+                alumno.get(existe).setBecado(becado);
+                break;
+            default:
+                System.out.println("La opción seleccionada no es válida.");
+                break;
+        }
 
     }
 
