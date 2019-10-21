@@ -57,8 +57,12 @@ public class Alumno {
                 alumno.get(existe).setDireccion(valor);
                 break;
             case 4:
-                int becado = Integer.parseInt(valor);
-                alumno.get(existe).setBecado(becado);
+                try {
+                    int becado = Integer.parseInt(valor);
+                    alumno.get(existe).setBecado(becado);
+                } catch (Exception e) {
+                    System.out.println("Debes insertar un número.");
+                }
                 break;
             default:
                 System.out.println("La opción seleccionada no es válida.");
