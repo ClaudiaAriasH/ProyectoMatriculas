@@ -123,16 +123,39 @@ public class ProyectoMatriculas {
                                 int existe = alumno.consultarAlumno(iden);
 
                                 if (existe != -1) {
-                                    System.out.println("Ingrese el telefono: ");
-                                    String telefono = scanner.next();
-                                    System.out.println("Ingrese el correo: ");
-                                    String correo = scanner.next();
-                                    System.out.println("Ingrese la dirección: ");
-                                    String direccion = scanner.next();
-                                    System.out.println("Ingrese si es becado: seleccione 1)SI, 2)No: ");
-                                    int becado = scanner.nextInt();
 
-                                    alumno.modificarAlumno(telefono, correo, direccion, becado, existe);
+                                    System.out.println("Seleccione el campo que desea modificar:\n1)Telefono.\n"
+                                            + "2)Correo.\n3)Dirección.\n4)La beca.");
+
+                                    int opcionseleccionada = scanner.nextInt();
+
+                                    switch (opcionseleccionada) {
+
+                                        case 1:
+                                            System.out.println("Ingrese el nuevo telefono: ");
+                                            String telefono = scanner.next();
+                                            alumno.modificarAlumno(telefono, existe, opcionseleccionada);
+                                            break;
+                                        case 2:
+                                            System.out.println("Ingrese el nuevo correo: ");
+                                            String correo = scanner.next();
+                                            alumno.modificarAlumno(correo, existe, opcionseleccionada);
+                                            break;
+                                        case 3:
+                                            System.out.println("Ingrese la nueva dirección: ");
+                                            String direccion = scanner.next();
+                                            alumno.modificarAlumno(direccion, existe, opcionseleccionada);
+                                            break;
+                                        case 4:
+                                            System.out.println("Modifique si es becado: seleccione 1)SI, 2)No: ");
+                                            String becado = scanner.next();
+                                            alumno.modificarAlumno(becado, existe, opcionseleccionada);
+                                            break;
+                                        default:
+                                            System.out.println("La opción seleccionada no es válida.");
+                                            break;
+                                    }
+
                                 } else {
                                     System.out.println("El alumno no existe en el sistema");
                                 }
