@@ -195,7 +195,12 @@ public class ProyectoMatriculas {
                                 String intensidadH = scanner.next();
                                 System.out.println("Ingrese los créditos");
                                 String creditos = scanner.next();
-                                asignaturaDto = new AsignaturasDto(codigo, nombre, intensidadH, creditos);
+                                
+                                //Agregar profesor                                 
+
+                                profesor.agregarProfesor("medico", "rupertino", "velez", 321, "1212", "3333333", "nnn", "na");
+
+                                asignaturaDto = new AsignaturasDto(codigo, nombre, intensidadH, creditos, profesor);
                                 asignatura.agregarAsignatura(asignaturaDto);
 
                             } else if (opcionAsignaturas == 2) {
