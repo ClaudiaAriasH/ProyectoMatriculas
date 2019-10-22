@@ -66,6 +66,45 @@ public class ProyectoMatriculas {
 
                             } else if (opcionProfesores == 2) {
                                 System.out.println("Opción modificar profesor");
+
+                                System.out.println("Ingrese la identificación: ");
+                                int iden = scanner.nextInt();
+                                int existe = profesor.buscarProfesor(iden);
+
+                                if (existe != -1) {
+
+                                    System.out.println("Seleccione el campo que desea modificar:\n1)Telefono.\n"
+                                            + "2)Correo.\n3)Dirección.");
+
+                                    int opcionseleccionada = scanner.nextInt();
+
+                                    switch (opcionseleccionada) {
+
+                                        case 1:
+                                            System.out.println("Ingrese el nuevo telefono: ");
+                                            String telefono = scanner.next();
+                                            profesor.modificarProfesor(telefono, existe, opcionseleccionada);
+                                            break;
+                                        case 2:
+                                            System.out.println("Ingrese el nuevo correo: ");
+                                            String correo = scanner.next();
+                                            profesor.modificarProfesor(correo, existe, opcionseleccionada);
+                                            break;
+                                        case 3:
+                                            System.out.println("Ingrese la nueva dirección: ");
+                                            String direccion = scanner.next();
+                                            profesor.modificarProfesor(direccion, existe, opcionseleccionada);
+                                            break;
+
+                                        default:
+                                            System.out.println("La opción seleccionada no es válida.");
+                                            break;
+                                    }
+
+                                } else {
+                                    System.out.println("El Profesor no existe en el sistema");
+                                }
+
                             } else if (opcionProfesores == 3) {
                                 System.out.println("Opción eliminar profesor");
                                 System.out.println("Ingrese la identificación");
@@ -195,9 +234,8 @@ public class ProyectoMatriculas {
                                 String intensidadH = scanner.next();
                                 System.out.println("Ingrese los créditos");
                                 String creditos = scanner.next();
-                                
-                                //Agregar profesor                                 
 
+                                //Agregar profesor                                 
                                 profesor.agregarProfesor("medico", "rupertino", "velez", 321, "1212", "3333333", "nnn", "na");
 
                                 asignaturaDto = new AsignaturasDto(codigo, nombre, intensidadH, creditos, profesor);

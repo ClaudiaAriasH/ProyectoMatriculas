@@ -50,7 +50,7 @@ public class Profesor {
      * @param identificacion
      * @return
      */
-    public boolean buscarProfesor(int identificacion) {
+    public int buscarProfesor(int identificacion) {
 
         boolean existe = false;
         int indice = 0;
@@ -74,8 +74,9 @@ public class Profesor {
 
         } else {
             System.out.println("El profesor no existe en el sistema.");
+            indice = -1;
         }
-        return existe;
+        return indice;
     }
 
     /**
@@ -98,8 +99,24 @@ public class Profesor {
         }
     }
 
-    public void modificarProfesor() {
+    public void modificarProfesor(String valor, int existe, int opcionseleccionada) {
+
+        switch (opcionseleccionada) {
+
+            case 1:
+                datosProfesor.get(existe).setTelefono(valor);
+                break;
+            case 2:
+                datosProfesor.get(existe).setCorreo(valor);
+                break;
+            case 3:
+                datosProfesor.get(existe).setDireccion(valor);
+                break;
+
+            default:
+                System.out.println("La opción seleccionada no es válida.");
+                break;
+        }
 
     }
-
 }
