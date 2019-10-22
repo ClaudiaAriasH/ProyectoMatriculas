@@ -11,14 +11,12 @@ package proyectomatriculas;
  */
 public class AsignaturasDto {
 
-    
     private String codigo;
     private String nombre;
     private String intensidadHoraria;
     private String creditos;
     private Profesor profesor;
-    
-    
+
     public AsignaturasDto(String codigo, String nombre, String intensidadHoraria, String creditos, Profesor profesor) {
         this.codigo = codigo;
         this.nombre = nombre;
@@ -26,10 +24,9 @@ public class AsignaturasDto {
         this.creditos = creditos;
         this.profesor = profesor;
     }
-    
-    public AsignaturasDto()
-    {
-    
+
+    public AsignaturasDto() {
+
     }
 
     public String getCodigo() {
@@ -63,8 +60,6 @@ public class AsignaturasDto {
     public void setCreditos(String creditos) {
         this.creditos = creditos;
     }
-    
-    
 
     public Profesor getProfesor() {
         return profesor;
@@ -73,10 +68,10 @@ public class AsignaturasDto {
     public void setProfesor(Profesor profesor) {
         this.profesor = profesor;
     }
-    
+
     @Override
     public String toString() {
         return "AsignaturasDto{" + "codigo=" + codigo + ", nombre=" + nombre + ", intensidadHoraria=" + intensidadHoraria + ", creditos=" + creditos + ", profesor=" + profesor + '}';
     }
- 
-   }
+
+}

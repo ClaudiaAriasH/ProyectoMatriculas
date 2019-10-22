@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  *
- * @author 19H1
+ * @author Claudia
  */
 public class Profesor {
 
@@ -99,6 +99,12 @@ public class Profesor {
         }
     }
 
+    /**
+     *
+     * @param valor
+     * @param existe
+     * @param opcionseleccionada
+     */
     public void modificarProfesor(String valor, int existe, int opcionseleccionada) {
 
         switch (opcionseleccionada) {
