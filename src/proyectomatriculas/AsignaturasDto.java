@@ -15,14 +15,15 @@ public class AsignaturasDto {
     private String nombre;
     private String intensidadHoraria;
     private String creditos;
-    private Profesor profesor;
+    private ProfesorDto profesorAsignado;
 
-    public AsignaturasDto(String codigo, String nombre, String intensidadHoraria, String creditos, Profesor profesor) {
+
+    public AsignaturasDto(String codigo, String nombre, String intensidadHoraria, String creditos, ProfesorDto profesorAsignado) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.intensidadHoraria = intensidadHoraria;
         this.creditos = creditos;
-        this.profesor = profesor;
+        this.profesorAsignado = profesorAsignado;
     }
 
     public AsignaturasDto() {
@@ -60,18 +61,19 @@ public class AsignaturasDto {
     public void setCreditos(String creditos) {
         this.creditos = creditos;
     }
-
-    public Profesor getProfesor() {
-        return profesor;
+    
+    
+    public ProfesorDto getProfesorAsignado() {
+        return profesorAsignado;
     }
 
-    public void setProfesor(Profesor profesor) {
-        this.profesor = profesor;
+    public void setProfesorAsignado(ProfesorDto profesorAsignado) {
+        this.profesorAsignado = profesorAsignado;
     }
 
     @Override
     public String toString() {
-        return "AsignaturasDto{" + "codigo=" + codigo + ", nombre=" + nombre + ", intensidadHoraria=" + intensidadHoraria + ", creditos=" + creditos + ", profesor=" + profesor + '}';
+        return "AsignaturasDto{" + "codigo=" + codigo + ", nombre=" + nombre + ", intensidadHoraria=" + intensidadHoraria + ", creditos=" + creditos + ", profesorAsignado=" + profesorAsignado + '}';
     }
 
 }

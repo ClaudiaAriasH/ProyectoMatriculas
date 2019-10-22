@@ -7,6 +7,7 @@ package proyectomatriculas;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  *
@@ -124,5 +125,15 @@ public class Profesor {
                 break;
         }
 
+    }
+    
+    public ProfesorDto seleccionarProfesor()
+    {
+        int cantidadReg=datosProfesor.size();
+        System.out.println(cantidadReg);
+        Random random = new Random();
+        int indiceAleatorio= random.nextInt((cantidadReg - 1) - 0 + 1) + 0;
+        
+        return datosProfesor.get(indiceAleatorio);
     }
 }
