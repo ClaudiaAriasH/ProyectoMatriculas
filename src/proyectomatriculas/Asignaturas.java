@@ -17,6 +17,8 @@ public class Asignaturas {
 
     public Asignaturas() {
         this.asignaturas = new ArrayList<>();
+        // asignaturas.add(new AsignaturasDto("23003", "Biologia", "4", "2", "Sebastian Vega Guitierrez"));
+
     }
 
     /**
@@ -49,7 +51,7 @@ public class Asignaturas {
             System.out.println("Nombre: " + asignaturas.get(indice).getNombre());
             System.out.println("intensidadHoraria: " + asignaturas.get(indice).getIntensidadHoraria());
             System.out.println("creditos: " + asignaturas.get(indice).getCreditos());
-            System.out.println("Profesor: "+ asignaturas.get(indice).getProfesor());
+            System.out.println("Profesor: " + asignaturas.get(indice).getProfesor());
 
         } else {
             System.out.println("No existe la asignatura en sistema.");

@@ -17,6 +17,12 @@ public class Alumno {
 
     public Alumno() {
         this.alumno = new ArrayList<>();
+
+        alumno.add(new AlumnoDto(1, "Juan Pablo", "Vega Perez", 102704353, "1990/04/23", "5982253", "juan.Vega@hotmail.com", "Calle 60#34 sur"));
+        alumno.add(new AlumnoDto(2, "Isabella", "Bustamante Martinez", 1027987654, "1994/08/03", "5982903", "isa.bust@hotmail.com", "Carerra 60A#34 sur -34"));
+        alumno.add(new AlumnoDto(2, "Carolina", "Santander Gomez", 1378654456, "1991/01/21", "3982253", "carosan@hotmail.com", "Calle 54#40-4"));
+        alumno.add(new AlumnoDto(1, "Estafani", "Bedoya", 137630234, "1999/08/21", "5972254", "tefa@hotmail.com", "Calle 66 B #70-09"));
+
     }
 
     /**

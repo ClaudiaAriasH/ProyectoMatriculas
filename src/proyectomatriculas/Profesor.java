@@ -18,12 +18,13 @@ public class Profesor {
     private List<ProfesorDto> datosProfesor;
 
     //Contructor
-    public Profesor(List<ProfesorDto> datosProfesor) {
-        this.datosProfesor = datosProfesor;
-    }
-
     public Profesor() {
         this.datosProfesor = new ArrayList<>();
+        datosProfesor.add(new ProfesorDto("Quimico", "Sebastian", "Vega Guitierrez", 1209876554, "1990/08/03", "5982553", "sebas.Vega@hotmail.com", "Carrera 62#34 sur"));
+        datosProfesor.add(new ProfesorDto("Biologa", "Sara", "Martinez Montenegro", 1308765439, "1994/08/03", "3894057", "sarism@hotmail.com", "Carerra 60B #38-04"));
+        datosProfesor.add(new ProfesorDto("Administrador de empresas", "Daniel", "Ortiz Mejia", 1037865439, "1989/04/30", "59086542", "dani.ortiz@hotmail.com", "Calle 58#42-4"));
+        datosProfesor.add(new ProfesorDto("Educación especial", "Kelly", "Londoño Palacio", 39206934, "1985/08/01", "5896420", "kelly85@hotmail.com", "Calle 68 B #73-09"));
+
     }
 
     /**
