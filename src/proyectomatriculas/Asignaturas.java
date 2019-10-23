@@ -35,12 +35,14 @@ public class Asignaturas {
      * @param codigo
      * @return
      */
-    public boolean buscarAsignatura(String codigo) {
+    public int buscarAsignatura(int codigo) {
 
         boolean existe = false;
         int indice = 0;
         for (int i = 0; i < asignaturas.size(); i++) {
-            if (asignaturas.get(i).getCodigo().equals(codigo)) {
+            
+            int codigoInt = Integer.parseInt(asignaturas.get(i).getCodigo());
+            if (codigoInt == codigo) {
                 existe = true;
                 indice = i;
             }
@@ -55,8 +57,9 @@ public class Asignaturas {
 
         } else {
             System.out.println("No existe la asignatura en sistema.");
+            indice = -1;
         }
-        return existe;
+        return indice;
     }
 
     /**
@@ -79,8 +82,24 @@ public class Asignaturas {
         }
     }
 
-    public void modificarAsignatura() {
+   public void modificarAsignatura(String valor, int existe, int opcionseleccionada) {
 
-    }
+        switch (opcionseleccionada) {
 
+            case 1:
+                asignaturas.get(existe).setNombre(valor);
+                break;
+            case 2:
+                asignaturas.get(existe).setIntensidadHoraria(valor);
+                break;
+            case 3:
+                asignaturas.get(existe).setCreditos(valor);
+                break;
+
+            default:
+                System.out.println("La opción seleccionada no es válida.");
+                break;
+        }
+
+}
 }

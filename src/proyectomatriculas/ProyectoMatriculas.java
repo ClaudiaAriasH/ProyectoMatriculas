@@ -238,6 +238,45 @@ public class ProyectoMatriculas {
 
                             } else if (opcionAsignaturas == 2) {
                                 System.out.println("Opción modificar asignatura.");
+                                
+                                 System.out.println("Ingrese el código: ");
+                                int codigo = scanner.nextInt();
+                                int existe = asignatura.buscarAsignatura(codigo);
+
+                                if (existe != -1) {
+
+                                    System.out.println("Seleccione el campo que desea modificar:\n1)Nombre.\n"
+                                            + "2)Intensidad Horaria.\n3)Créditos.");
+
+                                    int opcionseleccionada = scanner.nextInt();
+
+                                    switch (opcionseleccionada) {
+
+                                        case 1:
+                                            System.out.println("Ingrese el nuevo nombre: ");
+                                            String nombre = scanner.next();
+                                            asignatura.modificarAsignatura(nombre, existe, opcionseleccionada);
+                                            break;
+                                        case 2:
+                                            System.out.println("Ingrese la nueva intensidad horaria: ");
+                                            String intHoraria = scanner.next();
+                                            asignatura.modificarAsignatura(intHoraria, existe, opcionseleccionada);
+                                            break;
+                                        case 3:
+                                            System.out.println("Ingrese los nuevos créditos: ");
+                                            String creditos = scanner.next();
+                                            asignatura.modificarAsignatura(creditos, existe, opcionseleccionada);
+                                            break;
+
+                                        default:
+                                            System.out.println("La opción seleccionada no es válida.");
+                                            break;
+                                    }
+
+                                } else {
+                                    System.out.println("La asignatura no existe en el sistema");
+                                }
+     
                             } else if (opcionAsignaturas == 3) {
                                 System.out.println("Opción eliminar asignatura.");
                                 System.out.println("Ingrese el codigo de la asignatura");
@@ -246,7 +285,7 @@ public class ProyectoMatriculas {
                             } else if (opcionAsignaturas == 4) {
                                 System.out.println("Opción consultar asignatura.");
                                 System.out.println("Ingrese el codigo de la asignatura");
-                                String codigo = scanner.next();
+                                int codigo = scanner.nextInt();
                                 asignatura.buscarAsignatura(codigo);
                             } else {
 
