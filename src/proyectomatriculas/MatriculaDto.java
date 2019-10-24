@@ -10,7 +10,7 @@ package proyectomatriculas;
  * @author Maria
  */
 public class MatriculaDto {
-    
+
     AsignaturasDto asignatura;
     AlumnoDto alumno;
 
@@ -18,7 +18,7 @@ public class MatriculaDto {
         this.asignatura = asignatura;
         this.alumno = alumno;
     }
-    
+
     public AsignaturasDto getAsignatura() {
         return asignatura;
     }
@@ -39,7 +39,5 @@ public class MatriculaDto {
     public String toString() {
         return "MatriculaDto{" + "asignatura=" + asignatura + ", alumno=" + alumno + '}';
     }
-    
-    
-    
+
 }

@@ -126,13 +126,12 @@ public class Profesor {
         }
 
     }
-    
-    public ProfesorDto seleccionarProfesor()
-    {
-        int cantidadReg= datosProfesor.size();
+
+    public ProfesorDto seleccionarProfesor() {
+        int cantidadReg = datosProfesor.size();
         Random random = new Random();
-        int indiceAleatorio= random.nextInt((cantidadReg - 1) - 0 + 1) + 0;
-        
+        int indiceAleatorio = random.nextInt((cantidadReg - 1) - 0 + 1) + 0;
+
         return datosProfesor.get(indiceAleatorio);
     }
 }

@@ -17,7 +17,6 @@ public class AsignaturasDto {
     private String creditos;
     private ProfesorDto profesorAsignado;
 
-
     public AsignaturasDto(String codigo, String nombre, String intensidadHoraria, String creditos, ProfesorDto profesorAsignado) {
         this.codigo = codigo;
         this.nombre = nombre;
@@ -61,8 +60,7 @@ public class AsignaturasDto {
     public void setCreditos(String creditos) {
         this.creditos = creditos;
     }
-    
-    
+
     public ProfesorDto getProfesorAsignado() {
         return profesorAsignado;
     }

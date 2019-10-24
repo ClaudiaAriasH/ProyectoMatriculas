@@ -27,7 +27,7 @@ public class ProyectoMatriculas {
         AlumnoDto alumnoDto;
         Profesor profesor = new Profesor();
         Alumno alumno = new Alumno();
-        Matricula matricula= new Matricula();
+        Matricula matricula = new Matricula();
 
         while (!salir) {
 
@@ -235,13 +235,13 @@ public class ProyectoMatriculas {
                                 System.out.println("Ingrese los créditos");
                                 String creditos = scanner.next();
                                 ProfesorDto profesorAsignado = profesor.seleccionarProfesor();
-                                asignaturaDto = new AsignaturasDto(codigo, nombre, intensidadH, creditos, profesorAsignado); 
+                                asignaturaDto = new AsignaturasDto(codigo, nombre, intensidadH, creditos, profesorAsignado);
                                 asignatura.agregarAsignatura(asignaturaDto);
 
                             } else if (opcionAsignaturas == 2) {
                                 System.out.println("Opción modificar asignatura.");
-                                
-                                 System.out.println("Ingrese el código: ");
+
+                                System.out.println("Ingrese el código: ");
                                 int codigo = scanner.nextInt();
                                 int existe = asignatura.buscarAsignatura(codigo);
 
@@ -278,7 +278,7 @@ public class ProyectoMatriculas {
                                 } else {
                                     System.out.println("La asignatura no existe en el sistema");
                                 }
-     
+
                             } else if (opcionAsignaturas == 3) {
                                 System.out.println("Opción eliminar asignatura.");
                                 System.out.println("Ingrese el codigo de la asignatura");
@@ -299,24 +299,23 @@ public class ProyectoMatriculas {
                         }
                         break;
                     case 4:
-                        
-                  
+
                         System.out.println("Ingrese el código de la asignatura: ");
                         int codigo = scanner.nextInt();
-                        String resultadoAsignatura= asignatura.seleccionar(codigo);
+                        String resultadoAsignatura = asignatura.seleccionar(codigo);
 
                         System.out.println("Ingrese el identificación del alumno: ");
                         int identificacion = scanner.nextInt();
-                        String resultadoAlumno= alumno.seleccionar(identificacion);
-                        
+                        String resultadoAlumno = alumno.seleccionar(identificacion);
+                        System.out.println("\n" + "***************** Datos Matricula *********************");
                         matricula.matricularEstudiante(resultadoAsignatura, resultadoAlumno);
-                        
+
                         break;
-                    
+
                     case 5:
-                        
+
                         salir = true;
-                      
+
                         break;
 
                     default:

@@ -40,7 +40,7 @@ public class Asignaturas {
         boolean existe = false;
         int indice = 0;
         for (int i = 0; i < asignaturas.size(); i++) {
-            
+
             int codigoInt = Integer.parseInt(asignaturas.get(i).getCodigo());
             if (codigoInt == codigo) {
                 existe = true;
@@ -53,7 +53,7 @@ public class Asignaturas {
             System.out.println("Nombre: " + asignaturas.get(indice).getNombre());
             System.out.println("intensidadHoraria: " + asignaturas.get(indice).getIntensidadHoraria());
             System.out.println("creditos: " + asignaturas.get(indice).getCreditos());
-            System.out.println("Profesor: " + asignaturas.get(indice).getProfesorAsignado().getNombres()+" "+asignaturas.get(indice).getProfesorAsignado().getApellidos());
+            System.out.println("Profesor: " + asignaturas.get(indice).getProfesorAsignado().getNombres() + " " + asignaturas.get(indice).getProfesorAsignado().getApellidos());
 
         } else {
             System.out.println("No existe la asignatura en sistema.");
@@ -82,7 +82,7 @@ public class Asignaturas {
         }
     }
 
-   public void modificarAsignatura(String valor, int existe, int opcionseleccionada) {
+    public void modificarAsignatura(String valor, int existe, int opcionseleccionada) {
 
         switch (opcionseleccionada) {
 
@@ -101,16 +101,15 @@ public class Asignaturas {
                 break;
         }
 
-}
-   
-    public String seleccionar(int codigo)
-    {
+    }
+
+    public String seleccionar(int codigo) {
         String resultadoString = null;
         boolean existe = false;
         AsignaturasDto resultado = null;
         int indice = 0;
         for (int i = 0; i < asignaturas.size(); i++) {
-            
+
             int codigoInt = Integer.parseInt(asignaturas.get(i).getCodigo());
             if (codigoInt == codigo) {
                 existe = true;
@@ -119,16 +118,16 @@ public class Asignaturas {
         }
 
         if (existe) {
-            
+
             resultado = asignaturas.get(indice);
-            resultadoString= "Código: "+resultado.getCodigo()+" , Nombre: "+resultado.getNombre();
-        
+            resultadoString = "Código: " + resultado.getCodigo() + " , Nombre: " + resultado.getNombre() + "\n" + "PROFESOR: " + resultado.getProfesorAsignado().getNombres() + " " + resultado.getProfesorAsignado().getApellidos();
+
         } else {
             System.out.println("No existe la asignatura en sistema.");
             indice = -1;
         }
-        
+
         return resultadoString;
-        
+
     }
 }
