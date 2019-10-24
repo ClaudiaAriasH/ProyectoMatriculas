@@ -159,7 +159,9 @@ public class Alumno {
             resultadoString = "Código: " + resultado.getIdentificacion() + " , Nombre: " + resultado.getNombres() + " , Apellidos: " + resultado.getApellidos();
 
         } else {
+
             System.out.println("No existe el alumno en sistema.");
+
             indice = -1;
         }
 

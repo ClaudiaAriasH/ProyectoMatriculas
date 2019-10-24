@@ -302,6 +302,7 @@ public class ProyectoMatriculas {
 
                         System.out.println("Ingrese el código de la asignatura: ");
                         int codigo = scanner.nextInt();
+
                         String resultadoAsignatura = asignatura.seleccionar(codigo);
 
                         System.out.println("Ingrese el identificación del alumno: ");
