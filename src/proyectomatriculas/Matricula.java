@@ -5,10 +5,29 @@
  */
 package proyectomatriculas;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author s109e9
  */
 public class Matricula {
+    
+    private List<Object> matricula;
+    
+    public Matricula ()
+    {
+        this.matricula = new ArrayList<>();
+    }
+    
+
+    public void matricularEstudiante(String asignatura, String alumno) {
+        String registro= "ASIGNATURA: "+asignatura+" ALUMNO: "+alumno;
+        matricula.add(registro);
+        System.out.println(matricula);
+    }
+    
+    
     
 }

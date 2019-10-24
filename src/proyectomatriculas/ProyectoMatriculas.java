@@ -24,14 +24,16 @@ public class ProyectoMatriculas {
 
         Asignaturas asignatura = new Asignaturas();
         AsignaturasDto asignaturaDto;
+        AlumnoDto alumnoDto;
         Profesor profesor = new Profesor();
         Alumno alumno = new Alumno();
+        Matricula matricula= new Matricula();
 
         while (!salir) {
 
             try {
 
-                System.out.println("\n" + " Ingrese una operación: 1) Profesores 2) Alumnos 3) Asignaturas 4) Salir.");
+                System.out.println("\n" + " Ingrese una operación: 1) Profesores 2) Alumnos 3) Asignaturas 4) Matrícula 5)Salir.");
                 opcionPrincipal = scanner.nextInt();
 
                 switch (opcionPrincipal) {
@@ -297,8 +299,24 @@ public class ProyectoMatriculas {
                         }
                         break;
                     case 4:
-                        salir = true;
+                        
+                  
+                        System.out.println("Ingrese el código de la asignatura: ");
+                        int codigo = scanner.nextInt();
+                        String resultadoAsignatura= asignatura.seleccionar(codigo);
 
+                        System.out.println("Ingrese el identificación del alumno: ");
+                        int identificacion = scanner.nextInt();
+                        String resultadoAlumno= alumno.seleccionar(identificacion);
+                        
+                        matricula.matricularEstudiante(resultadoAsignatura, resultadoAlumno);
+                        
+                        break;
+                    
+                    case 5:
+                        
+                        salir = true;
+                      
                         break;
 
                     default:

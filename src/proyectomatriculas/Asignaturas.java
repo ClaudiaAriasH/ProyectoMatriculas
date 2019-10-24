@@ -102,4 +102,33 @@ public class Asignaturas {
         }
 
 }
+   
+    public String seleccionar(int codigo)
+    {
+        String resultadoString = null;
+        boolean existe = false;
+        AsignaturasDto resultado = null;
+        int indice = 0;
+        for (int i = 0; i < asignaturas.size(); i++) {
+            
+            int codigoInt = Integer.parseInt(asignaturas.get(i).getCodigo());
+            if (codigoInt == codigo) {
+                existe = true;
+                indice = i;
+            }
+        }
+
+        if (existe) {
+            
+            resultado = asignaturas.get(indice);
+            resultadoString= "Código: "+resultado.getCodigo()+" , Nombre: "+resultado.getNombre();
+        
+        } else {
+            System.out.println("No existe la asignatura en sistema.");
+            indice = -1;
+        }
+        
+        return resultadoString;
+        
+    }
 }

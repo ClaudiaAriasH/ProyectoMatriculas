@@ -133,5 +133,34 @@ public class Alumno {
 
         return indice;
     }
+    
+        public String seleccionar(int codigo)
+    {
+        String resultadoString = null;
+        boolean existe = false;
+        AlumnoDto resultado = null;
+        int indice = 0;
+        for (int i = 0; i < alumno.size(); i++) {
+            
+            int codigoInt = alumno.get(i).getIdentificacion();
+            if (codigoInt == codigo) {
+                existe = true;
+                indice = i;
+            }
+        }
+
+        if (existe) {
+            
+            resultado = alumno.get(indice);
+            resultadoString= "Código: "+resultado.getIdentificacion()+" , Nombre: "+resultado.getNombres()+" , Apellidos: "+resultado.getApellidos();
+        
+        } else {
+            System.out.println("No existe la asignatura en sistema.");
+            indice = -1;
+        }
+        
+        return resultadoString;
+        
+    }
 
 }
