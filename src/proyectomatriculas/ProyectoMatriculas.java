@@ -304,13 +304,14 @@ public class ProyectoMatriculas {
                         System.out.println("Ingrese el código de la asignatura: ");
                         int codigo = scanner.nextInt();
                         String resultadoAsignatura= asignatura.seleccionar(codigo);
-
+                        
                         System.out.println("Ingrese el identificación del alumno: ");
                         int identificacion = scanner.nextInt();
                         String resultadoAlumno= alumno.seleccionar(identificacion);
-                        
-                        matricula.matricularEstudiante(resultadoAsignatura, resultadoAlumno);
-                        
+                                              
+                        if(resultadoAsignatura!=null && resultadoAlumno!=null){
+                             matricula.matricularEstudiante(resultadoAsignatura, resultadoAlumno);
+                        }
                         break;
                     
                     case 5:
