@@ -155,7 +155,7 @@ public class Alumno {
             resultadoString= "Código: "+resultado.getIdentificacion()+" , Nombre: "+resultado.getNombres()+" , Apellidos: "+resultado.getApellidos();
         
         } else {
-            System.out.println("No existe la asignatura en sistema.");
+            System.out.println("No existe el alumno en el sistema.");
             indice = -1;
         }
         
