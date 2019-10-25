@@ -7,6 +7,8 @@ package proyectomatriculas;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -35,6 +37,10 @@ public class ProyectoMatriculas {
 
                 System.out.println("\n" + " Ingrese una operación: 1) Profesores 2) Alumnos 3) Asignaturas 4) Matrícula 5)Salir.");
                 opcionPrincipal = scanner.nextInt();
+                
+                if(opcionPrincipal < 0 ){
+                    throw new MenuException();
+                }
 
                 switch (opcionPrincipal) {
                     case 1:
@@ -322,9 +328,8 @@ public class ProyectoMatriculas {
                     default:
                         System.out.println("Opción Incorrecta. Ingrese una opción valida.");
                 }
-            } catch (InputMismatchException e) {
-                System.out.println("Debes insertar un número.");
-                scanner.next();
+            } catch (Exception e) {
+                System.out.println(e);
             }
 
         }
