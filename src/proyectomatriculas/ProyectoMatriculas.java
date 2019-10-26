@@ -37,8 +37,8 @@ public class ProyectoMatriculas {
 
                 System.out.println("\n" + " Ingrese una operación: 1) Profesores 2) Alumnos 3) Asignaturas 4) Matrícula 5)Salir.");
                 opcionPrincipal = scanner.nextInt();
-                
-                if(opcionPrincipal < 0 ){
+
+                if (opcionPrincipal < 0) {
                     throw new MenuException();
                 }
 
@@ -315,7 +315,11 @@ public class ProyectoMatriculas {
                         int identificacion = scanner.nextInt();
                         String resultadoAlumno = alumno.seleccionar(identificacion);
                         System.out.println("\n" + "***************** Datos Matricula *********************");
-                        matricula.matricularEstudiante(resultadoAsignatura, resultadoAlumno);
+                        int existe = matricula.consultarAsignatura(resultadoAsignatura, resultadoAlumno);
+
+                        if (existe == -1) {
+                            matricula.matricularEstudiante(resultadoAsignatura, resultadoAlumno);
+                        }
 
                         break;
 
@@ -329,7 +333,7 @@ public class ProyectoMatriculas {
                         System.out.println("Opción Incorrecta. Ingrese una opción valida.");
                 }
             } catch (Exception e) {
-                System.out.println(e+" el tipo de dato ingresado no es correcto");
+                System.out.println(e + " el tipo de dato ingresado no es correcto");
                 scanner.next();
             }
 

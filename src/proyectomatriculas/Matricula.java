@@ -42,4 +42,27 @@ public class Matricula {
         }
     }
 
+    public int consultarAsignatura(String asignatura, String alumno) {
+
+        boolean encontrado = false;
+        int indice = 0;
+        String registro = "ASIGNATURA: " + asignatura + "\n" + "ALUMNO: " + alumno;
+        for (int i = 0; i < matricula.size(); i++) {
+            if (matricula.get(i).equals(registro)) {
+                encontrado = true;
+                indice = i;
+            }
+        }
+
+        if (encontrado) {
+            System.out.println("El alumno ya está matriculado en ésta asignatura");
+
+        } else {
+
+            indice = -1;
+        }
+
+        return indice;
+    }
+
 }
