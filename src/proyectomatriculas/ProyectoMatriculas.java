@@ -329,7 +329,8 @@ public class ProyectoMatriculas {
                         System.out.println("Opción Incorrecta. Ingrese una opción valida.");
                 }
             } catch (Exception e) {
-                System.out.println(e);
+                System.out.println(e+" el tipo de dato ingresado no es correcto");
+                scanner.next();
             }
 
         }
